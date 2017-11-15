@@ -655,7 +655,7 @@ function updateHP() {
 // attackUp increases attack multiplier and attack strength
 function attackUp(){
 	attackMultiplier++;
-	myAttack=myAttack+(Math.floor(attackMultiplier*Math.random()*20));
+	myAttack=myAttack+(Math.floor(attackMultiplier*Math.random()*30));
 	console.log("your new attack strength is: "+myAttack);
 };
 
