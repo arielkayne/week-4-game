@@ -29,12 +29,30 @@ var no1="no1";
 var no2="no2";
 var no3="no3";
 var no4="no4";
+var audioTheme = new Audio(src="assets/audio/23867_newgrounds_billym.mp3");
+var audioToday = new Audio(src="assets/audio/today.wav");
+var audioBlewIt = new Audio(src="assets/audio/blewit.wav");
+var audioMakeOut = new Audio(src="assets/audio/No make out.mp3");
+var audioSmartest = new Audio(src="assets/audio/smartest.wav");
+var audioStop = new Audio(src="assets/audio/bm-stop.wav");
+var audioYelling = new Audio(src="assets/audio/noyelling.wav");
+var audioBad = new Audio(src="assets/audio/heisabadbadman.wav");
+audioBad.volume=.3;
+audioYelling.volume=.2;
+audioTheme.volume=.2;
+audioSmartest.volume=.2;
+audioStop.volume=.3;
+audioToday.volume=.4;
+audioMakeOut.volume=.4;
+audioBlewIt.volume=.4;
 
 // Reset all characters back to default start locations, reset vars
 console.log("start of scripts");
 
 reset();
 updateHP();
+audioTheme.loop=true;
+audioTheme.play();
 
 // character div click functions
 $("#char1").click(function(){
@@ -158,6 +176,7 @@ $("#char1").click(function(){
 			myHP=HP1;
 			myAttack=attack1;
 			attacker=no1;
+			audioSmartest.play();
 			$("#char1").css({
 				"left": "20px",
 				"top": "60px"});
@@ -287,6 +306,7 @@ $("#char2").click(function(){
 		}
 	};
 	if (gameOn===false) {
+			audioYelling.play();
 			gameOn=true;
 			status2=true;
 			myHP=HP2;
@@ -427,6 +447,7 @@ $("#char3").click(function(){
 			myHP=HP3;
 			myAttack=attack3;
 			attacker=no3;
+			audioBad.play();
 			$("#char3").css({
 				"left": "20px",
 				"top": "60px"});
@@ -554,6 +575,7 @@ $("#char4").click(function(){
 		}
 	};
 	if (gameOn===false) {
+			audioStop.play();
 			gameOn=true;
 			status4=true;
 			myHP=HP4;
@@ -675,6 +697,7 @@ $("#attack").click(function(){
 
 			if (status1===true && status2===true && status3===true && status4===true) {
 				$("#gameBroke").html("Time for some new lipstick. Danny appreciates you.");	
+				audioMakeOut.play();
 				$("#gameContainer").css({
 					"background": "url('assets/images/VeronicaVaughn.jpg')",
 					"background-size":"120%"});
@@ -688,6 +711,7 @@ $("#attack").click(function(){
 				setTimeout(function() {
 					alert("Pick your next target")
 		  			}, 500);
+				audioToday.play();
 	  			enemySelected=false;
 				console.log("you defeated your enemy");
 	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!	
@@ -707,6 +731,7 @@ $("#attack").click(function(){
 				$("#gameContainer").css({
 					"background": "url('assets/images/penguin.gif')",
 					"background-size":"120%"});
+				audioBlewIt.play();
 				setTimeout(function() {
 					alert("You dead. Hit reset to try again.")
   					}, 2000);
