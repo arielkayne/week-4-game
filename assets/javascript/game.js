@@ -37,6 +37,9 @@ var audioSmartest = new Audio(src="assets/audio/smartest.wav");
 var audioStop = new Audio(src="assets/audio/bm-stop.wav");
 var audioYelling = new Audio(src="assets/audio/noyelling.wav");
 var audioBad = new Audio(src="assets/audio/heisabadbadman.wav");
+var audioLets = new Audio(src="assets/audio/letsgo.wav");
+var audioMore = new Audio(src="assets/audio/billy_madison_want_more.wav");
+audioLets.volume=.4;
 audioBad.volume=.3;
 audioYelling.volume=.2;
 audioTheme.volume=.2;
@@ -45,6 +48,7 @@ audioStop.volume=.3;
 audioToday.volume=.4;
 audioMakeOut.volume=.4;
 audioBlewIt.volume=.4;
+audioMore.volume=.5;
 
 // Reset all characters back to default start locations, reset vars
 console.log("start of scripts");
@@ -163,6 +167,7 @@ $("#char1").click(function(){
 		
 			$("#gameBroke").html("Get to attacking, Danny doesn't have all day!");	
 
+			audioLets.play();
 			setTimeout(function() {
 				alert("Click the 'Attack' button to fight your nemesis.")
 	  			}, 300);
@@ -299,6 +304,7 @@ $("#char2").click(function(){
 					"top": "500px"});
 			};
 			$("#gameBroke").html("Get to attacking, Danny doesn't have all day!");	
+			audioLets.play();
 			setTimeout(function() {
 				alert("Click the 'Attack' button to fight your nemesis.")
 	  			}, 500);
@@ -312,7 +318,6 @@ $("#char2").click(function(){
 			myHP=HP2;
 			myAttack=attack2;
 			attacker=no2;
-
 			$("#char2").css({
 				"left": "20px",
 				"top": "60px"});
@@ -435,6 +440,7 @@ $("#char3").click(function(){
 					"top": "500px"});
 			};		
 			$("#gameBroke").html("Get to attacking, Danny doesn't have all day!");	
+			audioLets.play();
 			setTimeout(function() {
 				alert("Click the 'Attack' button to fight your nemesis.")
 	  			}, 500);
@@ -568,6 +574,7 @@ $("#char4").click(function(){
 					"top": "500px"});
 			};
 			$("#gameBroke").html("Get to attacking, Danny doesn't have all day!");				
+			audioLets.play();
 			setTimeout(function() {
 				alert("Click the 'Attack' button to fight your nemesis.")
 	  			}, 500);
@@ -712,7 +719,7 @@ $("#attack").click(function(){
 				setTimeout(function() {
 					alert("Pick your next target")
 		  			}, 300);
-				audioToday.play();
+				audioMore.play();
 	  			enemySelected=false;
 				console.log("you defeated your enemy");
 	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!	
