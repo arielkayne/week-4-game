@@ -79,7 +79,10 @@ $("#char1").click(function(){
 				$("#char3").css({
 					"left": "190px",
 					"top": "500px"});
-			};
+			};			
+			setTimeout(function() {
+				alert("Click the 'Attack' button to fight your nemesis.")
+	  			}, 500);
 			console.log("now you're ready to attack");
 		}
 	};
@@ -149,6 +152,9 @@ $("#char2").click(function(){
 					"left": "190px",
 					"top": "500px"});
 			};
+			setTimeout(function() {
+				alert("Click the 'Attack' button to fight your nemesis.")
+	  			}, 500);
 			console.log("now you're ready to attack");
 		}
 	};
@@ -217,6 +223,9 @@ $("#char3").click(function(){
 					"left": "190px",
 					"top": "500px"});
 			};		
+			setTimeout(function() {
+				alert("Click the 'Attack' button to fight your nemesis.")
+	  			}, 500);
 			console.log("now you're ready to attack");
 		}
 	};
@@ -284,6 +293,9 @@ $("#char4").click(function(){
 					"left": "190px",
 					"top": "500px"});
 			};
+			setTimeout(function() {
+				alert("Click the 'Attack' button to fight your nemesis.")
+	  			}, 500);
 			console.log("now you're ready to attack");
 		}
 	};
