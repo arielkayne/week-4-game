@@ -120,6 +120,55 @@ $("#char2").click(function(){
 			$("#gameBroke").html("You can't attack yourself, silly.");
 			console.log("wrong click");
 		}
+		else if (status1===true && status4===true && status3===true){
+			enemySelected=true;
+			status2=true;
+			enemyHP=HP2;
+			enemyAttack=attack2;
+			defender=no2;
+			$("#char2").css({
+				"left":"530px",
+				"top":"280px"});
+		}
+		else if (status1===true && status4===true && status3===false){
+			enemySelected=true;
+			status2=true;
+			enemyHP=HP2;
+			enemyAttack=attack2;
+			defender=no2;
+			$("#char2").css({
+				"left":"190px",
+				"top":"280px"});
+			$("#char3").css({
+				"left":"20px",
+				"top":"500px"});
+		}
+		else if (status1===true && status2===false && status4===true){
+			enemySelected=true;
+			status2=true;
+			enemyHP=HP2;
+			enemyAttack=attack2;
+			defender=no2;
+			$("#char2").css({
+				"left":"190px",
+				"top":"280px"});
+			$("#char2").css({
+				"left":"20px",
+				"top":"500px"});
+		}
+		else if (status1===false && status2===true && status4===true){
+			enemySelected=true;
+			status2=true;
+			enemyHP=HP2;
+			enemyAttack=attack2;
+			defender=no2;
+			$("#char2").css({
+				"left":"190px",
+				"top":"280px"});
+			$("#char1").css({
+				"left":"20px",
+				"top":"500px"});
+		}
 		else {		
 			enemySelected=true;
 			status2=true;
@@ -192,6 +241,56 @@ $("#char3").click(function(){
 			$("#gameBroke").html("You can't attack yourself, silly.");
 			console.log("wrong click");
 		}
+		
+		else if (status1===true && status2===true && status4===true){
+			enemySelected=true;
+			status3=true;
+			enemyHP=HP3;
+			enemyAttack=attack3;
+			defender=no3;
+			$("#char3").css({
+				"left":"360px",
+				"top":"280px"});
+		}
+		else if (status1===true && status2===true && status4===false){
+			enemySelected=true;
+			status3=true;
+			enemyHP=HP3;
+			enemyAttack=attack3;
+			defender=no3;
+			$("#char3").css({
+				"left":"190px",
+				"top":"280px"});
+			$("#char4").css({
+				"left":"20px",
+				"top":"500px"});
+		}
+		else if (status1===true && status2===false && status4===true){
+			enemySelected=true;
+			status3=true;
+			enemyHP=HP3;
+			enemyAttack=attack3;
+			defender=no3;
+			$("#char3").css({
+				"left":"190px",
+				"top":"280px"});
+			$("#char2").css({
+				"left":"20px",
+				"top":"500px"});
+		}
+		else if (status1===false && status2===true && status4===true){
+			enemySelected=true;
+			status3=true;
+			enemyHP=HP3;
+			enemyAttack=attack3;
+			defender=no3;
+			$("#char3").css({
+				"left":"190px",
+				"top":"280px"});
+			$("#char1").css({
+				"left":"20px",
+				"top":"500px"});
+		}
 		else {	
 			enemySelected=true;
 			status3=true;
@@ -261,6 +360,55 @@ $("#char4").click(function(){
 		if (attacker===no4) {
 			$("#gameBroke").html("You can't attack yourself, silly.");
 			console.log("wrong click");
+		}
+		else if (status1===true && status2===true && status3===true){
+			enemySelected=true;
+			status4=true;
+			enemyHP=HP4;
+			enemyAttack=attack4;
+			defender=no4;
+			$("#char4").css({
+				"left":"360px",
+				"top":"280px"});
+		}
+		else if (status1===true && status2===true && status3===false){
+			enemySelected=true;
+			status4=true;
+			enemyHP=HP4;
+			enemyAttack=attack4;
+			defender=no4;
+			$("#char4").css({
+				"left":"190px",
+				"top":"280px"});
+			$("#char3").css({
+				"left":"20px",
+				"top":"500px"});
+		}
+		else if (status1===true && status2===false && status3===true){
+			enemySelected=true;
+			status4=true;
+			enemyHP=HP4;
+			enemyAttack=attack4;
+			defender=no3;
+			$("#char4").css({
+				"left":"190px",
+				"top":"280px"});
+			$("#char2").css({
+				"left":"20px",
+				"top":"500px"});
+		}
+		else if (status1===false && status2===true && status3===true){
+			enemySelected=true;
+			status4=true;
+			enemyHP=HP4;
+			enemyAttack=attack4;
+			defender=no3;
+			$("#char4").css({
+				"left":"190px",
+				"top":"280px"});
+			$("#char1").css({
+				"left":"20px",
+				"top":"500px"});
 		}
 		else {	
 			enemySelected=true;
@@ -413,19 +561,27 @@ $("#attack").click(function(){
 	console.log("attack has been clicked");
 	if (myHP>0 && enemyHP>0){
 		enemyHP=(enemyHP-myAttack);
+		
 		if (enemyHP<=0) {
 			enemyHP=0;
-			setTimeout(function() {
-			alert("Pick your next target")
-  			}, 500);
-  			enemySelected=false;
-			console.log("you defeated your enemy");
+			updateHP();
 
-
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!	
-			console.log("ready to select new enemy...");
-			$(currentEnemy).css({"background":"red"});
-
+			if (status1===true && status2===true && status3===true && status4===true) {
+				setTimeout(function() {
+					alert("You got rid of all your enemies! Press 'Reset' to continue.")
+  					}, 500);
+				$(currentEnemy).css({"background":"red"});
+			}
+			else {
+				setTimeout(function() {
+					alert("Pick your next target")
+		  			}, 500);
+	  			enemySelected=false;
+				console.log("you defeated your enemy");
+	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!	
+				console.log("ready to select new enemy...these are already taken"+"1:"+status1 +"2:"+status2+ "3:"+status3 +"4:"+status4);
+				$(currentEnemy).css({"background":"red"});
+			}
 		}
 		
 		else {
@@ -433,23 +589,22 @@ $("#attack").click(function(){
 			if (myHP<=0) {
 				$(currentAttacker).css({"background":"red"});
 				myHP=0;
+				updateHP();
 				setTimeout(function() {
-				alert("You dead. Hit reset to try again.")
-  				}, 500);
+					alert("You dead. Hit reset to try again.")
+  					}, 500);
 				console.log("Your HP ran out. You lose");
 			}
 			console.log("Your enemy HP is: "+enemyHP);
 			console.log("Your remaining HP is: "+myHP);
 			attackUp();
 			updateHP();
+
 		}
 	}
-	
-
 
 	else {
 		$("#gameBroke").html("You're dead. You can't fight no more.");	
-		alert("You dead. Hit reset to try again.");	
 	}
 });
 

@@ -4,7 +4,9 @@ body {
 
 h2 {
 	color:white;
-	padding: 5px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	font-size: 30px;
 	font-weight: bolder;
 }
@@ -78,4 +80,5 @@ span {
 
 button {
 	background: white;
+	margin-left: 20px;
 }
