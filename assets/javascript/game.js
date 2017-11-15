@@ -165,7 +165,7 @@ $("#char1").click(function(){
 
 			setTimeout(function() {
 				alert("Click the 'Attack' button to fight your nemesis.")
-	  			}, 500);
+	  			}, 300);
 			console.log("now you're ready to attack");
 		}
 	};
@@ -699,8 +699,9 @@ $("#attack").click(function(){
 				$("#gameBroke").html("Time for some new lipstick. Danny appreciates you.");	
 				audioMakeOut.play();
 				$("#gameContainer").css({
-					"background": "url('assets/images/VeronicaVaughn.jpg')",
-					"background-size":"120%"});
+					"background": "#ccc url('assets/images/VeronicaVaughn.jpg')",
+					"background-size":"108%",
+					"background-repeat":"no-repeat"});
 				setTimeout(function() {
 					alert("You got rid of all your enemies! Press 'Reset' to continue.")
   					}, 2000);
@@ -710,7 +711,7 @@ $("#attack").click(function(){
 				$("#gameBroke").html("Ooh, I love checking things off of my special list.");	
 				setTimeout(function() {
 					alert("Pick your next target")
-		  			}, 500);
+		  			}, 300);
 				audioToday.play();
 	  			enemySelected=false;
 				console.log("you defeated your enemy");
@@ -729,8 +730,9 @@ $("#attack").click(function(){
 				$("#gameBroke").html("Wah. Wah. You're gonna be sent back to the South Pole.");	
 				console.log("veronica should be next");
 				$("#gameContainer").css({
-					"background": "url('assets/images/penguin.gif')",
-					"background-size":"120%"});
+					"background": "#ccc url('assets/images/penguin.gif')",
+					"background-size":"101%",
+					"background-repeat":"no-repeat"});
 				audioBlewIt.play();
 				setTimeout(function() {
 					alert("You dead. Hit reset to try again.")
