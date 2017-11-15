@@ -114,6 +114,7 @@ $("#char1").click(function(){
 			$("#char1").css("left","20px");
 			if (status2===true) {
 				$("#char3").css({
+					"background":"dimgray",
 					"left": "20px",
 					"top": "500px"});
 				$("#char4").css({
@@ -123,6 +124,7 @@ $("#char1").click(function(){
 			};
 			if (status3===true) {
 				$("#char2").css({
+					"background":"dimgray",
 					"left": "20px",
 					"top": "500px"});
 				$("#char4").css({
@@ -132,6 +134,7 @@ $("#char1").click(function(){
 			};
 			if (status4===true) {
 				$("#char2").css({
+					"background":"dimgray",
 					"left": "20px",
 					"top": "500px"});
 				$("#char3").css({
@@ -672,9 +675,12 @@ $("#attack").click(function(){
 
 			if (status1===true && status2===true && status3===true && status4===true) {
 				$("#gameBroke").html("Time for some new lipstick. Danny appreciates you.");	
+				$("#gameContainer").css({
+					"background": "url('assets/images/VeronicaVaughn.jpg')",
+					"background-size":"120%"});
 				setTimeout(function() {
 					alert("You got rid of all your enemies! Press 'Reset' to continue.")
-  					}, 500);
+  					}, 2000);
 				$(currentEnemy).css({"background":"red"});
 			}
 			else {
@@ -697,6 +703,7 @@ $("#attack").click(function(){
 				myHP=0;
 				updateHP();
 				$("#gameBroke").html("Wah. Wah. You're gonna be sent back to the South Pole.");	
+				console.log("veronica should be next");
 				$("#gameContainer").css({
 					"background": "url('assets/images/penguin.gif')",
 					"background-size":"120%"});
