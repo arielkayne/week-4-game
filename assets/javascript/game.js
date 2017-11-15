@@ -49,6 +49,62 @@ $("#char1").click(function(){
 			$("#gameBroke").html("You can't attack yourself, silly.");
 		console.log("wrong click");
 		}
+		else if (status2===true && status3===true && status4===true){
+			enemySelected=true;
+			status1=true;
+			enemyHP=HP1;
+			enemyAttack=attack1;
+			defender=no1;
+			$("#char1").css({
+				"background":"white",
+				"left":"360px",
+				"top":"280px"});
+		}
+		else if (status2===true && status3===true && status4===false){
+			enemySelected=true;
+			status1=true;
+			enemyHP=HP1;
+			enemyAttack=attack1;
+			defender=no1;
+			$("#char1").css({
+				"background":"white",
+				"left":"190px",
+				"top":"280px"});
+			$("#char4").css({
+				"background":"dimgray",
+				"left":"20px",
+				"top":"500px"});
+		}
+		else if (status2===true && status3===false && status4===true){
+			enemySelected=true;
+			status1=true;
+			enemyHP=HP1;
+			enemyAttack=attack1;
+			defender=no1;
+			$("#char1").css({
+				"background":"white",
+				"left":"190px",
+				"top":"280px"});
+			$("#char3").css({
+				"background":"dimgray",
+				"left":"20px",
+				"top":"500px"});
+		}
+		else if (status2===false && status3===true && status4===true){
+			enemySelected=true;
+			status1=true;
+			enemyHP=HP1;
+			enemyAttack=attack2;
+			defender=no1;
+			$("#char1").css({
+				"background":"white",
+				"left":"190px",
+				"top":"280px"});
+			$("#char2").css({
+				"background":"dimgray",
+				"left":"20px",
+				"top":"500px"});
+		}
 		else {
 			enemySelected=true;
 			status1=true;
@@ -61,6 +117,7 @@ $("#char1").click(function(){
 					"left": "20px",
 					"top": "500px"});
 				$("#char4").css({
+					"background":"dimgray",
 					"left": "190px",
 					"top": "500px"});
 			};
@@ -70,6 +127,7 @@ $("#char1").click(function(){
 					"top": "500px"});
 				$("#char4").css({
 					"left": "190px",
+					"background":"dimgray",
 					"top": "500px"});
 			};
 			if (status4===true) {
@@ -77,9 +135,13 @@ $("#char1").click(function(){
 					"left": "20px",
 					"top": "500px"});
 				$("#char3").css({
+					"background":"dimgray",
 					"left": "190px",
 					"top": "500px"});
 			};			
+		
+			$("#gameBroke").html("Get to attacking, Danny doesn't have all day!");	
+
 			setTimeout(function() {
 				alert("Click the 'Attack' button to fight your nemesis.")
 	  			}, 500);
@@ -120,52 +182,59 @@ $("#char2").click(function(){
 			$("#gameBroke").html("You can't attack yourself, silly.");
 			console.log("wrong click");
 		}
-		else if (status1===true && status4===true && status3===true){
+		else if (status1===true && status3===true && status4===true){
 			enemySelected=true;
 			status2=true;
 			enemyHP=HP2;
 			enemyAttack=attack2;
 			defender=no2;
 			$("#char2").css({
-				"left":"530px",
+				"background":"white",
+				"left":"360px",
 				"top":"280px"});
 		}
-		else if (status1===true && status4===true && status3===false){
+		else if (status1===true && status3===true && status4===false){
 			enemySelected=true;
 			status2=true;
 			enemyHP=HP2;
 			enemyAttack=attack2;
 			defender=no2;
 			$("#char2").css({
+				"background":"white",
+				"left":"190px",
+				"top":"280px"});
+			$("#char4").css({
+				"background":"dimgray",
+				"left":"20px",
+				"top":"500px"});
+		}
+		else if (status1===true && status3===false && status4===true){
+			enemySelected=true;
+			status2=true;
+			enemyHP=HP2;
+			enemyAttack=attack2;
+			defender=no2;
+			$("#char2").css({
+				"background":"white",
 				"left":"190px",
 				"top":"280px"});
 			$("#char3").css({
+				"background":"dimgray",
 				"left":"20px",
 				"top":"500px"});
 		}
-		else if (status1===true && status2===false && status4===true){
+		else if (status1===false && status3===true && status4===true){
 			enemySelected=true;
 			status2=true;
 			enemyHP=HP2;
 			enemyAttack=attack2;
 			defender=no2;
 			$("#char2").css({
-				"left":"190px",
-				"top":"280px"});
-			$("#char2").css({
-				"left":"20px",
-				"top":"500px"});
-		}
-		else if (status1===false && status2===true && status4===true){
-			enemySelected=true;
-			status2=true;
-			enemyHP=HP2;
-			enemyAttack=attack2;
-			defender=no2;
-			$("#char2").css({
+				"background":"white",
 				"left":"190px",
 				"top":"280px"});
 			$("#char1").css({
+				"background":"dimgray",
 				"left":"20px",
 				"top":"500px"});
 		}
@@ -179,28 +248,35 @@ $("#char2").click(function(){
 			$("#char2").css("left","20px");
 			if (status1===true) {
 				$("#char3").css({
+					"background":"dimgray",
 					"left": "20px",
 					"top": "500px"});
 				$("#char4").css({
+					"background":"dimgray",
 					"left": "190px",
 					"top": "500px"});
 			};
 			if (status3===true) {
 				$("#char1").css({
+					"background":"dimgray",
 					"left": "20px",
 					"top": "500px"});
 				$("#char4").css({
+					"background":"dimgray",
 					"left": "190px",
 					"top": "500px"});
 			};
 			if (status4===true) {
 				$("#char1").css({
+					"background":"dimgray",
 					"left": "20px",
 					"top": "500px"});
 				$("#char3").css({
+					"background":"dimgray",
 					"left": "190px",
 					"top": "500px"});
 			};
+			$("#gameBroke").html("Get to attacking, Danny doesn't have all day!");	
 			setTimeout(function() {
 				alert("Click the 'Attack' button to fight your nemesis.")
 	  			}, 500);
@@ -249,6 +325,7 @@ $("#char3").click(function(){
 			enemyAttack=attack3;
 			defender=no3;
 			$("#char3").css({
+				"background":"white",
 				"left":"360px",
 				"top":"280px"});
 		}
@@ -259,9 +336,11 @@ $("#char3").click(function(){
 			enemyAttack=attack3;
 			defender=no3;
 			$("#char3").css({
+				"background":"white",
 				"left":"190px",
 				"top":"280px"});
 			$("#char4").css({
+				"background":"dimgray",
 				"left":"20px",
 				"top":"500px"});
 		}
@@ -272,9 +351,11 @@ $("#char3").click(function(){
 			enemyAttack=attack3;
 			defender=no3;
 			$("#char3").css({
+				"background":"white",
 				"left":"190px",
 				"top":"280px"});
 			$("#char2").css({
+				"background":"dimgray",
 				"left":"20px",
 				"top":"500px"});
 		}
@@ -285,9 +366,11 @@ $("#char3").click(function(){
 			enemyAttack=attack3;
 			defender=no3;
 			$("#char3").css({
+				"background":"white",
 				"left":"190px",
 				"top":"280px"});
 			$("#char1").css({
+				"background":"dimgray",
 				"left":"20px",
 				"top":"500px"});
 		}
@@ -300,28 +383,35 @@ $("#char3").click(function(){
 			$("#char3").css("left","20px");
 			if (status1===true) {
 				$("#char2").css({
+					"background":"dimgray",
 					"left": "20px",
 					"top": "500px"});
 				$("#char4").css({
+					"background":"dimgray",
 					"left": "190px",
 					"top": "500px"});
 			};
 			if (status2===true) {
 				$("#char1").css({
+					"background":"dimgray",
 					"left": "20px",
 					"top": "500px"});
 				$("#char4").css({
+					"background":"dimgray",
 					"left": "190px",
 					"top": "500px"});
 			};
 			if (status4===true) {
 				$("#char1").css({
+					"background":"dimgray",
 					"left": "20px",
 					"top": "500px"});
 				$("#char2").css({
+					"background":"dimgray",
 					"left": "190px",
 					"top": "500px"});
 			};		
+			$("#gameBroke").html("Get to attacking, Danny doesn't have all day!");	
 			setTimeout(function() {
 				alert("Click the 'Attack' button to fight your nemesis.")
 	  			}, 500);
@@ -368,6 +458,7 @@ $("#char4").click(function(){
 			enemyAttack=attack4;
 			defender=no4;
 			$("#char4").css({
+				"background":"white",
 				"left":"360px",
 				"top":"280px"});
 		}
@@ -378,6 +469,7 @@ $("#char4").click(function(){
 			enemyAttack=attack4;
 			defender=no4;
 			$("#char4").css({
+				"background":"white",
 				"left":"190px",
 				"top":"280px"});
 			$("#char3").css({
@@ -389,11 +481,13 @@ $("#char4").click(function(){
 			status4=true;
 			enemyHP=HP4;
 			enemyAttack=attack4;
-			defender=no3;
+			defender=no4;
 			$("#char4").css({
+				"background":"white",
 				"left":"190px",
 				"top":"280px"});
 			$("#char2").css({
+				"background":"dimgray",
 				"left":"20px",
 				"top":"500px"});
 		}
@@ -402,11 +496,13 @@ $("#char4").click(function(){
 			status4=true;
 			enemyHP=HP4;
 			enemyAttack=attack4;
-			defender=no3;
+			defender=no4;
 			$("#char4").css({
+				"background":"white",
 				"left":"190px",
 				"top":"280px"});
 			$("#char1").css({
+				"background":"dimgray",
 				"left":"20px",
 				"top":"500px"});
 		}
@@ -419,28 +515,35 @@ $("#char4").click(function(){
 			$("#char4").css("left","20px");
 			if (status1===true) {
 				$("#char2").css({
+					"background":"dimgray",
 					"left": "20px",
 					"top": "500px"});
 				$("#char3").css({
+					"background":"dimgray",
 					"left": "190px",
 					"top": "500px"});
 			};
 			if (status3===true) {
 				$("#char1").css({
+					"background":"dimgray",
 					"left": "20px",
 					"top": "500px"});
 				$("#char2").css({
+					"background":"dimgray",
 					"left": "190px",
 					"top": "500px"});
 			};
 			if (status2===true) {
 				$("#char1").css({
+					"background":"dimgray",
 					"left": "20px",
 					"top": "500px"});
 				$("#char3").css({
+					"background":"dimgray",
 					"left": "190px",
 					"top": "500px"});
 			};
+			$("#gameBroke").html("Get to attacking, Danny doesn't have all day!");				
 			setTimeout(function() {
 				alert("Click the 'Attack' button to fight your nemesis.")
 	  			}, 500);
@@ -487,6 +590,7 @@ function reset (){
 	status4=false;
 	attacker=null;
 	defender=null;
+	$("#gameBroke").html("<strong>Looks like Danny has a list he needs you to 'take care of'...pick your favorite hitman.</strong>");	
 	$("#char1").css({
 		"left": "20px",
 		"top": "60px",
@@ -551,7 +655,7 @@ function updateHP() {
 // attackUp increases attack multiplier and attack strength
 function attackUp(){
 	attackMultiplier++;
-	myAttack=myAttack+(Math.floor(attackMultiplier*Math.random()*15));
+	myAttack=myAttack+(Math.floor(attackMultiplier*Math.random()*20));
 	console.log("your new attack strength is: "+myAttack);
 };
 
@@ -567,19 +671,21 @@ $("#attack").click(function(){
 			updateHP();
 
 			if (status1===true && status2===true && status3===true && status4===true) {
+				$("#gameBroke").html("Time for some new lipstick. Danny appreciates you.");	
 				setTimeout(function() {
 					alert("You got rid of all your enemies! Press 'Reset' to continue.")
   					}, 500);
 				$(currentEnemy).css({"background":"red"});
 			}
 			else {
+				$("#gameBroke").html("Ooh, I love checking things off of my special list.");	
 				setTimeout(function() {
 					alert("Pick your next target")
 		  			}, 500);
 	  			enemySelected=false;
 				console.log("you defeated your enemy");
 	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!	
-				console.log("ready to select new enemy...these are already taken"+"1:"+status1 +"2:"+status2+ "3:"+status3 +"4:"+status4);
+				console.log("ready to select new enemy...these are already used:"+" 1:"+status1 +" 2:"+status2+ " 3:"+status3 +" 4:"+status4);
 				$(currentEnemy).css({"background":"red"});
 			}
 		}
@@ -590,9 +696,13 @@ $("#attack").click(function(){
 				$(currentAttacker).css({"background":"red"});
 				myHP=0;
 				updateHP();
+				$("#gameBroke").html("Wah. Wah. You're gonna be sent back to the South Pole.");	
+				$("#gameContainer").css({
+					"background": "url('assets/images/penguin.gif')",
+					"background-size":"120%"});
 				setTimeout(function() {
 					alert("You dead. Hit reset to try again.")
-  					}, 500);
+  					}, 2000);
 				console.log("Your HP ran out. You lose");
 			}
 			console.log("Your enemy HP is: "+enemyHP);
